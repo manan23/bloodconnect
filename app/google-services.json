@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "987432220175",
+    "firebase_url": "https://blood-connect-77972.firebaseio.com",
+    "project_id": "blood-connect-77972",
+    "storage_bucket": "blood-connect-77972.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987432220175:android:0b9d20d00d4d9ad0",
+        "android_client_info": {
+          "package_name": "com.example.user.bloodconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987432220175-sg6i1isfstv4suqb12pikpr044qqpq8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.bloodconnect",
+            "certificate_hash": "8b30927424a3b662eb3e3e34553e32ae5268a723"
+          }
+        },
+        {
+          "client_id": "987432220175-t3emnpb2jkehd1lvahabq2u3aqtj73c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvwEy-qpemJq8tnb164Jpfb20taaEZgik"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987432220175-t3emnpb2jkehd1lvahabq2u3aqtj73c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

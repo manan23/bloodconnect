@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="com.example.user.bloodconnect.activity.splashscreen">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/bloodlogo" />
+
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/shape"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
+        android:fontFamily="serif"
+        android:hint="   Email id"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+        android:fontFamily="serif"
+        android:hint="  Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape1"
+        android:fontFamily="serif"
+        android:padding="7dp"
+        android:text="LOGIN"
+        android:textAlignment="center"
+        android:textColor="@color/colorwhite"
+        android:textSize="25dp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/forgetpass"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:padding="6dp"
+        android:text="FORGOT PASSWORD ?"
+        android:textAlignment="center"
+        android:textColor="@color/colorwhite"
+        android:textSize="15dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:padding="6dp"
+        android:text="DON'T HAVE AN ACCOUNT? REGISTER NOW !!"
+        android:textAlignment="center"
+        android:textColor="@color/colorwhite"
+        android:textSize="15dp"
+        android:textStyle="italic" />
+
+
+</LinearLayout>

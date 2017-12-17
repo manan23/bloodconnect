@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:weightSum="7"
+    android:orientation="vertical">
+    <TextView
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:id="@+id/needname"
+        android:hint="Name"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <TextView
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:id="@+id/neednumber"
+        android:hint="Contact number"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <TextView
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:id="@+id/needaddress"
+        android:hint="Near By Location address"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="2">
+      <TextView
+          android:textStyle="italic"
+          android:textSize="20dp"
+          android:id="@+id/needgroup"
+         android:hint="Bloodgroup"
+         android:layout_weight="1"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content" />
+      <TextView
+          android:textStyle="italic"
+          android:textSize="20dp"
+          android:id="@+id/needunit"
+        android:hint="Bloodunit"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:hint="Requred date"
+        android:id="@+id/needdate"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+     <LinearLayout
+         android:layout_weight="2"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:orientation="horizontal"
+         android:weightSum="3">
+         <Button
+             android:id="@+id/buttonaccept"
+             android:text="Accept"
+             android:layout_weight="1"
+             android:layout_width="0dp"
+             android:background="@color/colorPrimary"
+             android:layout_height="match_parent" />
+         <Button
+             android:background="@color/colorPrimary"
+             android:id="@+id/buttonreject"
+             android:text="Reject"
+             android:layout_weight="1"
+             android:layout_width="0dp"
+             android:layout_height="match_parent" />
+         <Button
+             android:background="@color/colorPrimary"
+             android:id="@+id/buttonshare"
+             android:text="Share"
+             android:layout_weight="1"
+             android:layout_width="0dp"
+             android:layout_height="match_parent" />
+
+
+     </LinearLayout>
+</LinearLayout>
