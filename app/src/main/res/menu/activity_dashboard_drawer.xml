@@ -3,23 +3,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_fd"
+            android:id="@+id/fd"
             android:title="Find Donar" />
         <item
-            android:id="@+id/nav_dh"
+            android:id="@+id/dh"
             android:title="Donation History" />
         <item
-            android:id="@+id/nav_fb"
+            android:id="@+id/fb"
             android:title="Feedback" />
+        <item
+            android:id="@+id/Acceptor"
+            android:title="Need Acceptor"></item>
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_team"
+                android:id="@+id/team"
                 android:title="Our Team" />
             <item
-                android:id="@+id/nav_rf"
+                android:id="@+id/rf"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Refer Friend" />
         </menu>

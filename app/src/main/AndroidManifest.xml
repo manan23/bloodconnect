@@ -11,28 +11,31 @@
         android:roundIcon="@mipmap/imagesicon1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.splashscreen">
+        <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.register" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".activity.dashboard"
+            android:name=".activity.HomeActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.finddonar"
+            android:name=".activity.FindDonarActivity"
             android:label="Find Donar"
             android:theme="@style/AppTheme1" />
         <activity
-            android:name=".activity.profile"
+            android:name=".activity.ProfileActivity"
             android:label="Profile"
             android:theme="@style/AppTheme1" />
-        <activity android:name=".activity.feedbackform"></activity>
+        <activity android:name=".activity.FeedbackFormActivity" />
+        <activity android:name=".activity.AcceptActivity" />
+        <activity android:name=".activity.NotifyActivity" />
+        <activity android:name=".activity.AccepterActivity"></activity>
     </application>
 
 </manifest>
