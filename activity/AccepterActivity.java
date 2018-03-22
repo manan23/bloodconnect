@@ -3,6 +3,7 @@ package com.example.user.bloodconnect.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.example.user.bloodconnect.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,5 +20,6 @@ public class AccepterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accepter);
         needAccepter = (RecyclerView) findViewById(R.id.needAcceptor);
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
     }
 }
