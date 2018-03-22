@@ -1,15 +1,12 @@
 package com.example.user.bloodconnect.activity;
 
 import android.annotation.TargetApi;
-import android.app.DatePickerDialog;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.user.bloodconnect.R;
@@ -24,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 
-public class profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 TextView name,number,email,city,pgender,pbloodgroup;
     Button dob;
     DatabaseReference reference;
@@ -53,23 +50,8 @@ TextView name,number,email,city,pgender,pbloodgroup;
         final int day = cal.get(cal.DAY_OF_MONTH);
 
 
-        dob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                DatePickerDialog datepicker = new DatePickerDialog(profile.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        dob.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
-                    }
-                }, year, month, day);
-                datepicker.show();
-            }
-
-        });
-
         String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        reference = FirebaseDatabase.getInstance().getReference().child("register").child(id);
+        reference = FirebaseDatabase.getInstance().getReference("register").child(id);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

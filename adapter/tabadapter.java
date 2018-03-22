@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.user.bloodconnect.fragment.fragment11;
-import com.example.user.bloodconnect.fragment.fragment22;
-import com.example.user.bloodconnect.fragment.fragment33;
+import com.example.user.bloodconnect.fragment.Current_NeedFragment;
+import com.example.user.bloodconnect.fragment.DonationHistoryFragment;
+import com.example.user.bloodconnect.fragment.BloodBankFragment;
 
 /**
  * Created by User on 27-09-2017.
@@ -25,15 +25,15 @@ public class tabadapter extends FragmentPagerAdapter {
         {
             case 0:
 
-                return new fragment11();
+                return new Current_NeedFragment();
 
             case 1:
 
-                return new fragment22();
+                return new DonationHistoryFragment();
 
             case 2:
 
-                return new fragment33();
+                return new BloodBankFragment();
 
             default:
                 break;

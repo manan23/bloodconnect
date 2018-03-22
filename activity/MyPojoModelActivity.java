@@ -4,7 +4,7 @@ package com.example.user.bloodconnect.activity;
  * Created by User on 11-10-2017.
  */
 
-public class mypojo {
+public class MyPojoModelActivity {
 
    private String  fName;
     private String  lName;

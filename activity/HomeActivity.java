@@ -6,13 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +22,7 @@ import com.example.user.bloodconnect.R;
 import com.example.user.bloodconnect.adapter.tabadapter;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class dashboard extends AppCompatActivity implements ActionBar.TabListener,NavigationView.OnNavigationItemSelectedListener
+public class HomeActivity extends AppCompatActivity implements ActionBar.TabListener,NavigationView.OnNavigationItemSelectedListener
 {
     private FirebaseAuth mauth;
     private ViewPager viewPager;
@@ -44,7 +44,7 @@ public class dashboard extends AppCompatActivity implements ActionBar.TabListene
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dashboard.this, finddonar.class);
+                Intent intent = new Intent(HomeActivity.this, FindDonarActivity.class);
                 startActivity(intent);
             }
         });
@@ -121,14 +121,20 @@ public class dashboard extends AppCompatActivity implements ActionBar.TabListene
 
 
         if (id == R.id.profile) {
-            Intent intent = new Intent(dashboard.this, profile.class);
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if(id==R.id.notify)
+        {
+            Intent intent =new Intent(HomeActivity.this,NotifyActivity.class);
             startActivity(intent);
             return true;
         }
         if(id==R.id.signout)
         {
             FirebaseAuth.getInstance().signOut();
-            Intent intent=new Intent(dashboard.this,MainActivity.class);
+            Intent intent=new Intent(HomeActivity.this,LoginActivity.class);
             startActivity(intent);
             finish();
             return true;
@@ -158,31 +164,36 @@ public class dashboard extends AppCompatActivity implements ActionBar.TabListene
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_fd) {
-            Intent intent = new Intent(dashboard.this,finddonar.class);
+        if (id == R.id.fd) {
+            Intent intent = new Intent(HomeActivity.this,FindDonarActivity.class);
             startActivity(intent);
             return true;
         }
 
-        if(id ==R.id.nav_dh)
+        if(id ==R.id.dh)
             {
-                Intent intent = new Intent(dashboard.this, dashboard.class);
+                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                   startActivity(intent);
             }
 
-        if(id ==R.id.nav_fb)
+        if(id ==R.id.fb)
         {
-            Intent intent = new Intent(dashboard.this,feedbackform.class);
+            Intent intent = new Intent(HomeActivity.this,FeedbackFormActivity.class);
             startActivity(intent);
         }
-        if(id ==R.id.nav_team)
+        if(id ==R.id.Acceptor)
         {
-            Intent intent = new Intent(dashboard.this, dashboard.class);
+            Intent intent=new Intent(HomeActivity.this,AccepterActivity.class);
             startActivity(intent);
         }
-        if(id ==R.id.nav_rf)
+        if(id ==R.id.team)
         {
-            Intent intent = new Intent(dashboard.this,dashboard.class);
+            Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
+        if(id ==R.id.rf)
+        {
+            Intent intent = new Intent(HomeActivity.this,HomeActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

@@ -24,25 +24,29 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class finddonar extends AppCompatActivity
+public class FindDonarActivity extends AppCompatActivity
 {
     Spinner fbloodgroup;
     DatabaseReference reference;
     private FirebaseAuth mauth;
-
+    String ndate;
     EditText fbloodunit,ffname,flname,faddress,fnumber;
     Button fsubmit,fneeddate;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_finddonar);
         String bloodgroup[] = {"Select Blood Group", "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-", "Bombay Blood Group"};
 
-        reference = FirebaseDatabase.getInstance().getReference().child("donationhistory");
 
         fbloodgroup = (Spinner) findViewById(R.id.fbloodgroup);
         fbloodunit = (EditText) findViewById(R.id.fbloodunit);
@@ -64,7 +68,7 @@ public class finddonar extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                DatePickerDialog datepicker=new DatePickerDialog(finddonar.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datepicker=new DatePickerDialog(FindDonarActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         fneeddate.setText(dayOfMonth+"/"+(month+1)+"/"+year);
@@ -76,7 +80,7 @@ public class finddonar extends AppCompatActivity
         });
 
 
-        ArrayAdapter adapter1 = new ArrayAdapter(finddonar.this, R.layout.support_simple_spinner_dropdown_item, bloodgroup);
+        ArrayAdapter adapter1 = new ArrayAdapter(FindDonarActivity.this, R.layout.support_simple_spinner_dropdown_item, bloodgroup);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fbloodgroup.setAdapter(adapter1);
 
@@ -90,18 +94,34 @@ public class finddonar extends AppCompatActivity
                 String bloodunit = fbloodunit.getText().toString();
                 String bloodgroup = fbloodgroup.getSelectedItem().toString();
                 String needdate= fneeddate.getText().toString();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                try {
+                    Date d;
+                    d = sdf.parse(needdate);
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(d);
+                    ndate = sdf.format(c.getTime());
+
+                }
+                catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
                 if (fname.equals("") || lname.equals("") || address.equals("") || number.equals("") || bloodunit.equals("") || bloodgroup.equals("Select Blood Group")||needdate.equals("")) {
-                    Toast.makeText(finddonar.this, "ENTER ALL THE FIELDS", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FindDonarActivity.this, "ENTER ALL THE FIELDS", Toast.LENGTH_SHORT).show();
                 }
 
                  else if(number.length()==10)
                  {
-                        ProgressDialog progress = new ProgressDialog(finddonar.this);
+                        ProgressDialog progress = new ProgressDialog(FindDonarActivity.this);
                         progress.setMessage("updating request.. PLEASE WAIT!!!!");
                         progress.show();
                         donationhistory(fname, lname, number, address, bloodgroup, bloodunit,needdate);
                         progress.cancel();
+                }
+                else
+                {
+                    Toast.makeText(FindDonarActivity.this, "Enter the Correct Contact Number", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -110,7 +130,7 @@ public class finddonar extends AppCompatActivity
 
         String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("donationhistory");
+        reference = FirebaseDatabase.getInstance().getReference().child("current_request");
 
         final Map finddonar = new HashMap<>();
         finddonar.put("fName", fname);
@@ -119,20 +139,21 @@ public class finddonar extends AppCompatActivity
         finddonar.put("address", address);
         finddonar.put("bloodunit", bloodunit);
         finddonar.put("bloodgroup", bloodgroup);
-        finddonar.put("needdate",needdate);
+        finddonar.put("needdate",ndate);
+        finddonar.put("status","Require Blood");
         reference.child(id).setValue(finddonar).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(finddonar.this, "Request updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FindDonarActivity.this, "Request updated", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(finddonar.this, dashboard.class);
+                    Intent intent = new Intent(FindDonarActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }
 
                 else
                 {
-                    Toast.makeText(finddonar.this, "request again...!!! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FindDonarActivity.this, "request again...!!! ", Toast.LENGTH_SHORT).show();
                 }
             }
 

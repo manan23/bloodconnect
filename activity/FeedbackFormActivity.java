@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class feedbackform extends AppCompatActivity {
+public class FeedbackFormActivity extends AppCompatActivity {
     DatabaseReference reference;
     EditText feedname, feedmail, feednumber, feedmessage;
     Button feedsubmit;
@@ -44,7 +44,7 @@ public class feedbackform extends AppCompatActivity {
                 String message = feedmessage.getText().toString();
 
                 if (name.equals("") || number.equals("") || mail.equals("") || message.equals("")) {
-                    Toast.makeText(feedbackform.this, "ENTER ALL THE FIELDS", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedbackFormActivity.this, "ENTER ALL THE FIELDS", Toast.LENGTH_SHORT).show();
                 }
                 else if (number.length() == 10) {
 
@@ -59,12 +59,12 @@ public class feedbackform extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(feedbackform.this, "Feedback Submission Successfull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(FeedbackFormActivity.this, "Feedback Submission Successfull", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(feedbackform.this, dashboard.class);
+                                Intent intent = new Intent(FeedbackFormActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(feedbackform.this, "feedback submission failed...!!! ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(FeedbackFormActivity.this, "feedback submission failed...!!! ", Toast.LENGTH_SHORT).show();
                             }
                         }
 

@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * Created by User on 27-09-2017.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText number, password;
     String number1;
     Button login;
@@ -45,18 +45,14 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProgressDialog progress=new ProgressDialog(MainActivity.this);
-                progress.setMessage("SIGNING IN...... PLEASE WAIT!!!!");
-                progress.show();
                 startsignin();
-                  progress.cancel();
             }
         });
         mauthlistener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(MainActivity.this, dashboard.class));
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 }
             }
         };
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.user.bloodconnect.activity.register.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
 
             }
@@ -75,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 String emailAddress = number.getText().toString();
                 if(emailAddress.equals(""))
                 {
-                    Toast.makeText(MainActivity.this, "enter the Email Address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "enter the Email Address", Toast.LENGTH_SHORT).show();
                 }
 
                 else
@@ -85,11 +81,11 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "password reset link sent", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, "password reset link sent", Toast.LENGTH_SHORT).show();
                                     }
                                     else
                                     {
-                                        Toast.makeText(MainActivity.this, "password link not sent successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, "password link not sent successfully", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -107,9 +103,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void startsignin() {
+        final ProgressDialog progress =ProgressDialog.show(LoginActivity.this,"Logging In","Authenticating.. Please Wait!!!! ",false,false);
         String email = number.getText().toString();
         String password1 = password.getText().toString();
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password1)) {
+            progress.dismiss();
             Toast.makeText(this, "Enter all the Credientials", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -118,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if (!task.isSuccessful()) {
-                        Toast.makeText(MainActivity.this, "Enter The Correct Credientials", Toast.LENGTH_SHORT).show();
+                        progress.dismiss();
+                        Toast.makeText(LoginActivity.this, "Enter The Correct Credientials", Toast.LENGTH_SHORT).show();
                     }
 
                 }

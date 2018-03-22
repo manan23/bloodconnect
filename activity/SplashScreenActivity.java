@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.example.user.bloodconnect.R;
 
-public class splashscreen extends Activity implements Animation.AnimationListener {
+public class SplashScreenActivity extends Activity implements Animation.AnimationListener {
     Animation animFadeIn,animblink;
     LinearLayout linearLayout;
     ImageView logo;
@@ -25,7 +25,7 @@ public class splashscreen extends Activity implements Animation.AnimationListene
         animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_in);
 
-        animFadeIn.setAnimationListener(splashscreen.this);
+        animFadeIn.setAnimationListener(SplashScreenActivity.this);
 
         linearLayout = (LinearLayout) findViewById(R.id.linear);
 
@@ -57,7 +57,7 @@ public class splashscreen extends Activity implements Animation.AnimationListene
 
     public void onAnimationEnd(Animation animation) {
 
-        Intent i = new Intent(splashscreen.this, MainActivity.class);
+        Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
         startActivity(i);
         this.finish();
     }
