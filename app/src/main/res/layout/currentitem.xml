@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-    <TextView
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:id="@+id/needname"
-        android:hint="Name"
-       android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_below="@id/needname"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="2">
-        <TextView
-            android:textStyle="italic"
-            android:textSize="15dp"
-            android:id="@+id/needgroup"
-            android:hint="Bloodgroup"
-            android:layout_weight="0.75"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textStyle="italic"
-            android:textSize="15dp"
-            android:id="@+id/needunit"
-            android:hint="Bloodunit"
-            android:layout_weight="1.25"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        android:src="@mipmap/ic_launcher_round" />
 
     <TextView
-        android:textStyle="italic"
-        android:textSize="15dp"
+        android:id="@+id/needname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_toRightOf="@+id/circleImageView"
+        android:hint="Name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/needgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/needname"
+        android:layout_marginLeft="23dp"
+        android:layout_toEndOf="@+id/circleImageView"
+        android:layout_toRightOf="@id/circleImageView"
+        android:hint="Bloodgroup"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/needunit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/needgroup"
+        android:layout_toEndOf="@+id/circleImageView"
+        android:layout_toRightOf="@id/circleImageView"
+        android:hint="Bloodunit"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <TextView
         android:id="@+id/needaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/needunit"
+        android:layout_marginLeft="23dp"
+        android:layout_toEndOf="@+id/circleImageView"
+        android:layout_toRightOf="@id/circleImageView"
         android:hint="Location "
-     android:layout_below="@+id/ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
+        android:textColor="@color/black"
+        android:textSize="18dp" />
 
 
 </RelativeLayout>

@@ -1,52 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/donatename"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_toRightOf="@+id/circleImageView"
         android:hint="Name"
-        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/donategroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/donatename"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_marginLeft="23dp"
+        android:layout_toEndOf="@+id/circleImageView"
+        android:layout_toRightOf="@id/circleImageView"
+        android:hint="Bloodgroup"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/donategroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.75"
-            android:hint="Bloodgroup"
-            android:textSize="15dp"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/donateunit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.25"
-            android:hint="Bloodunit"
-            android:textSize="15dp"
-            android:textStyle="italic" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/donateunit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/donategroup"
+        android:layout_marginLeft="23dp"
+        android:layout_toEndOf="@+id/circleImageView"
+        android:layout_toRightOf="@id/circleImageView"
+        android:hint="Bloodunit"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/donateaddress"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ll"
+        android:layout_below="@+id/donateunit"
+        android:layout_marginLeft="23dp"
+        android:layout_toEndOf="@+id/circleImageView"
+        android:layout_toRightOf="@id/circleImageView"
         android:hint="Location "
-        android:textSize="15dp"
-        android:textStyle="italic" />
+        android:textColor="@color/black"
+        android:textSize="18dp" />
 
 
 </RelativeLayout>
