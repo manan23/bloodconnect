@@ -63,6 +63,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:text="LOGIN"
+        android:background="@color/red_800"
         android:textColor="@color/colorwhite"
         android:textStyle="bold" />
 

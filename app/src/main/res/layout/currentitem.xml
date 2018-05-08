@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/recycleback"
     android:orientation="vertical">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="18dp"
         android:id="@+id/circleImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,6 +19,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="23dp"
         android:layout_marginStart="23dp"
+        android:layout_toEndOf="@id/circleImageView"
         android:layout_toRightOf="@+id/circleImageView"
         android:hint="Name"
         android:textColor="@color/black"
@@ -40,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/needgroup"
+        android:layout_marginLeft="23dp"
         android:layout_toEndOf="@+id/circleImageView"
         android:layout_toRightOf="@id/circleImageView"
         android:hint="Bloodunit"

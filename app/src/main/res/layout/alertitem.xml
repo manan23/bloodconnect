@@ -1,40 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <ImageView
+        android:id="@+id/image11"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
     <TextView
-        android:id="@+id/bankname"
-        android:hint="Name"
-        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/text11"
+        android:text=" Bank Name"
+        android:textSize="17dp"
+        android:padding="8dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        android:textStyle="bold"/>
+        android:layout_toRightOf="@id/image11"/>
     <TextView
-        android:textColor="@color/black"
-        android:id="@+id/bankaddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/text12"
+        android:text="Bank Number"
+        android:padding="5dp"
         android:textSize="15dp"
-        android:hint="Address"
-        android:textStyle="italic"/>
-    <TextView
-        android:textColor="@color/black"
-        android:hint="Number"
-        android:id="@+id/banknumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image11"
+        android:layout_below="@+id/text11"/>
+    <TextView
+        android:id="@+id/text13"
+        android:text="Bank Address"
+        android:padding="5dp"
         android:textSize="15dp"
-        android:textStyle="italic"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image11"
+        android:layout_below="@+id/text12"/>
+<LinearLayout
+    android:layout_below="@id/text13"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2"
+    android:orientation="horizontal">
     <Button
-        android:background="@color/colorwhite"
+        android:textColor="@color/colorwhite"
+        android:textStyle="bold"
+        android:text="CALL"
+        android:background="@color/red_300"
+        android:layout_weight="1"
         android:id="@+id/buttoncall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Call"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="italic"/>
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/buttonLocation"
+        android:background="@color/green_300"
+        android:textColor="@color/colorwhite"
+        android:text="Location"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
+
+</RelativeLayout>

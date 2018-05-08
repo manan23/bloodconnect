@@ -4,82 +4,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="7"
+    android:layout_weight="8"
     android:orientation="vertical"
     tools:context="com.example.user.bloodconnect.activity.AcceptActivity">
 
-    <TextView
-        android:id="@+id/requestname"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="Name"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        android:background="@drawable/acceptshape"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
-    <TextView
-        android:id="@+id/requestnumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="Contact number"
-        android:textSize="15dp"
-        android:textStyle="italic"
+        <TextView
+            android:id="@+id/requestname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
 
-        />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/requestaddress"
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@drawable/acceptshape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="Near By Location address"
-        android:textSize="15dp"
-        android:textStyle="italic" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/requestnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Contact number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/acceptshape"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/requestaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Hospital Address"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/acceptshape"
+        android:orientation="horizontal">
 
         <TextView
+            android:padding="20dp"
             android:id="@+id/requestgroup"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.75"
+            android:layout_weight="1"
             android:hint="Bloodgroup"
-            android:textSize="15dp"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/requestunit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.25"
-            android:hint="Bloodunit"
-            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="italic" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/requestdate"
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="Requred date"
-        android:textSize="15dp"
-        android:textStyle="italic" />
-    <TextView
-        android:id="@+id/requeststatus"
+        android:background="@drawable/acceptshape"
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/requestunit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Bloodunit"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@drawable/acceptshape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="Request Status"
-        android:textSize="15dp"
-        android:textStyle="italic" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/requestdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Requred date"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/acceptshape"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/requeststatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Request Status"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,21 +159,22 @@
         android:weightSum="2">
 
         <Button
-            android:visibility="gone"
             android:id="@+id/buttonaccept"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:text="Accept" />
+            android:text="Accept"
+            android:visibility="gone" />
+
         <Button
-            android:visibility="gone"
             android:id="@+id/buttonshare"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:text="Share" />
+            android:text="Share"
+            android:visibility="gone" />
 
 
     </LinearLayout>

@@ -1,10 +1,52 @@
 <resources>
-    <string name="app_name" translatable="true">Blood Donar</string>
-    <string name="title_activity_dashboard">dashboard</string>
+    <string name="app_name" translatable="false">Blood Connect</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="floating_button">FIND DONAR</string>
+    <string name="floating_button">Find Donar</string>
+
+    <string-array name="name">
+        <item>MAHATMA GANDHI HOSPITAL</item>
+        <item>LIFE CARE BLOOD BANK</item>
+        <item>Blood Donation 365 Days</item>
+        <item>SANTOKBA DURLABHJI BLOOD BANK</item>
+        <item>AGARSEN BLOOD BANK</item>
+        <item>UMMED SINGH SUSHILA DEVI MEMORIAL BLOOD BANK</item>
+        <item>GLOBAL BLOOD DONAR ORGANIZATION SANSATHAN</item>
+        <item>FORTIS HOSPITAL</item>
+        <item>APEX HOSPITAL</item>
+        <item>NARAYANA HOSPITAL</item>
+        <item>METRO BLOOD BANK</item>
+    </string-array>
+
+    <string-array name="address">
+        <item>Sitapura Industrail Area,Jaipur-302022</item>
+        <item>Paramhans Colony, Murlipura, Jaipur - 302032</item>
+        <item>344, Near Seva Sadan, Bees Dukan, Adarsh Nagar, Jaipur - 302004</item>
+        <item>Bhawani Singh Road, Rambagh, Jaipur - 302005</item>
+        <item> Maharaja Agrasen Hospital, Sector No. 7, Vidyadhar Nagar, Jaipur - 302006</item>
+        <item>A-6, Shastri Nagar, Near Tagore Public School, Opposite State Bank Of Indore, Jaipur - 302016</item>
+        <item>2240, Near Siwam Mandir, Kishanpole Bazar, Jaipur</item>
+        <item>214,JLN Marg, Malviya Nagar,Jaipur</item>
+        <item>SP-6, Industrial Area, Malviya Nagar,</item>
+        <item>Sector-28, Pratap Nagar, Sanganer</item>
+        <item>Shipra Path, Near Technology Park, Mansarovar</item>
+    </string-array>
+
+    <string-array name="number">
+        <item>0141 2771777</item>
+        <item>0141 2236108</item>
+        <item>0141 2603151</item>
+        <item>0141 2566251</item>
+        <item>0141 2335569</item>
+        <item>0141 2281020</item>
+        <item>0141 2315598</item>
+        <item>0120 2547000</item>
+        <item>0141 2751870</item>
+        <item>0141 5192939</item>
+        <item>0141 2786001</item>
+    </string-array>
 </resources>
